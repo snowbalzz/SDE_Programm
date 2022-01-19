@@ -1,22 +1,26 @@
 // singletone
 
+import Box from './base/Box'
+import buildBlueBox from './boxes/BlueBox';
+
 export default class Game {
   private static instance: Game;
-  
-  private constructor() {
+  private boxes: Box[];
 
+  private constructor() {
+    this.boxes = [];
   }
 
   public start() {
-    requestAnimationFrame(() => this.loop());
-    console.log('Hello');
-    console.clear();
-    
+    requestAnimationFrame(() => this.loop()); 
+    this.boxes.push(buildBlueBox())
   }
 
   public loop() {
     requestAnimationFrame(() => this.loop());
-
+    this.boxes.forEach((box)=>{
+      box.info();
+    });
   }
 
   public static singleton(): Game {

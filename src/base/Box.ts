@@ -20,4 +20,8 @@ export default class Box {
     this.color = setup.color;
     this.speed = setup.speed;
   }
+
+  public info(){
+    console.log('I am Box. Admire me, my color is ' + this.color + '!');
+  }
 }
