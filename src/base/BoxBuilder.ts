@@ -1,5 +1,14 @@
-import { StayStrategy } from "../strategy/BoxStrategy";
+import { StayStrategy, Strategy } from "../strategy/BoxStrategy";
 import Box, { BoxSetup } from "./Box";
+
+const defaultBoxSetup = () => ({
+  size: 50,
+  x: 0,
+  y: 0,
+  color: 'black',
+  speed: 1,
+  strategy: new StayStrategy()
+});
 
 export default class BoxBuilder {
   private setup: BoxSetup;
@@ -9,14 +18,7 @@ export default class BoxBuilder {
   }
 
   private reset() {
-    this.setup = {
-      size: 50,
-      x: 0,
-      y: 0,
-      color: 'black',
-      speed: 1,
-      strategy: new StayStrategy()
-    };
+    this.setup = defaultBoxSetup();
   }
 
   public setSize(size: number) {
@@ -29,7 +31,21 @@ export default class BoxBuilder {
     return this;
   }
 
-  // .. more setters
+  public setSpeed(speed: number) {
+    this.setup.speed = speed;
+    return this;
+  }
+
+  public setPosition(x: number, y: number) {
+    this.setup.x = x;
+    this.setup.y = y;
+    return this;
+  }
+
+  public setStrategy(strategy: Strategy) {
+    this.setup.strategy = strategy;
+    return this;
+  }
 
   public getResult() {
     const box = new Box(this.setup);
