@@ -1,11 +1,11 @@
 // singletone
 
 import Box from './base/Box'
-import buildBlueBox from './boxes/BlueBox';
-import buildRedBox from './boxes/RedBox';
+import BoxBuilder from './base/BoxBuilder';
 import DrawEventManager from './events/DrawEventManager';
 import UpdateEventManager from './events/UpdateEventManager';
 import RendererFacade from './facade/RendererFacade'
+import { ChaoticStrategy, StayStrategy, StrafeStrategy } from './strategy/BoxStrategy';
 
 export default class Game {
   private static instance: Game;
@@ -29,8 +29,33 @@ export default class Game {
 
   public start() {
     requestAnimationFrame(() => this.loop()); 
-    this.boxes.push(buildBlueBox(100, 200))
-    this.boxes.push(buildRedBox(100, 500))
+
+    const builder = new BoxBuilder();
+
+    this.spawn(builder
+      .setSize(20)
+      .setPosition(100, 100)
+      .setColor('red')
+      .setStrategy(new StayStrategy())
+      .getResult());
+
+    this.spawn(builder
+      .setSize(40)
+      .setPosition(200, 200)
+      .setColor('green')
+      .setStrategy(new ChaoticStrategy())
+      .getResult());
+
+    this.spawn(builder
+      .setSize(60)
+      .setPosition(300, 300)
+      .setColor('blue')
+      .setStrategy(new StrafeStrategy(Math.PI / 4))
+      .getResult());
+  }
+
+  public spawn(box: Box) {
+    this.boxes.push(box);
   }
 
   public loop() {
