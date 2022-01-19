@@ -8,7 +8,7 @@ export default class Renderer {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
       document.body.appendChild(canvas);
-      canvas.style.backgroundColor = 'white';
+      canvas.style.backgroundColor = 'red';
       this.ctx = canvas.getContext('2d');
     }
   

@@ -17,6 +17,7 @@ export default class Box {
   private color: string;
   private speed: number;
   private strategy: Strategy
+  private game: Game;
 
   constructor(setup: BoxSetup) {
     this.size = setup.size;
@@ -25,10 +26,9 @@ export default class Box {
     this.color = setup.color;
     this.speed = setup.speed;
     this.strategy  = setup.strategy;
-
-    const managers = Game.singleton().eventManagers;
-    managers.update.attach(this);
-    managers.draw.attach(this);
+    this.game = Game.singleton();
+    this.game.eventManagers.update.attach(this);
+    this.game.eventManagers.draw.attach(this);
   }
 
   public update(){
@@ -36,6 +36,6 @@ export default class Box {
   }
 
   public draw() {
-    console.log('draw box at ' + this.x + ' ' + this.y);
+    this.game.renderer.draw(this.x, this.y)
   }
 }
