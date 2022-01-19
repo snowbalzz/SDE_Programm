@@ -1,1 +1,4 @@
-console.log(123);
+import Game from "./Game";
+
+const game = Game.singleton();
+game.start();
