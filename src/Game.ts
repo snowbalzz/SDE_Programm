@@ -2,6 +2,7 @@
 
 import Box from './base/Box'
 import buildBlueBox from './boxes/BlueBox';
+import buildRedBox from './boxes/RedBox';
 import DrawEventManager from './events/DrawEventManager';
 import UpdateEventManager from './events/UpdateEventManager';
 
@@ -24,7 +25,8 @@ export default class Game {
 
   public start() {
     requestAnimationFrame(() => this.loop()); 
-    this.boxes.push(buildBlueBox())
+    this.boxes.push(buildBlueBox(100, 200))
+    this.boxes.push(buildRedBox(100, 500))
   }
 
   public loop() {

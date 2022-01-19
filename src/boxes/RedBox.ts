@@ -1,13 +1,14 @@
 import BoxBuilder from "../base/BoxBuilder";
 import { ChaoticStrategy } from "../strategy/BoxStrategy";
 
-export default function buildBlueBox(x: number, y: number) {
+export default function buildRedBox(x: number, y: number) {
   const builder = new BoxBuilder();
 
   return builder
-    .setSize(100)
+    .setSize(30)
     .setPosition(x, y)
-    .setColor('blue')
+    .setColor('red')
+    .setSpeed(3)
     .setStrategy(new ChaoticStrategy())
     .getResult();
 }
