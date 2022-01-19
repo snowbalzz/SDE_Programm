@@ -5,6 +5,7 @@ import buildBlueBox from './boxes/BlueBox';
 import buildRedBox from './boxes/RedBox';
 import DrawEventManager from './events/DrawEventManager';
 import UpdateEventManager from './events/UpdateEventManager';
+import RendererFacade from './facade/RendererFacade'
 
 export default class Game {
   private static instance: Game;
@@ -15,7 +16,10 @@ export default class Game {
     update: UpdateEventManager
   }
 
+  public renderer: RendererFacade
+
   private constructor() {
+    this.renderer = new RendererFacade();
     this.boxes = [];
     this.eventManagers = {
       draw: new DrawEventManager,
@@ -32,6 +36,7 @@ export default class Game {
   public loop() {
     requestAnimationFrame(() => this.loop());
     this.eventManagers.update.notify();
+    this.renderer.clear();
     this.eventManagers.draw.notify();
   }
 
