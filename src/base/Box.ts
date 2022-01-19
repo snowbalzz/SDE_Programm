@@ -1,4 +1,5 @@
 import { Strategy } from "../strategy/BoxStrategy";
+import Game from '../Game';
 
 export interface BoxSetup {
   size: number,
@@ -24,13 +25,17 @@ export default class Box {
     this.color = setup.color;
     this.speed = setup.speed;
     this.strategy  = setup.strategy;
-  }
 
-  public info(){
-    console.log('I am Box. Admire me, my color is ' + this.color + '!');
+    const managers = Game.singleton().eventManagers;
+    managers.update.attach(this);
+    managers.draw.attach(this);
   }
 
   public update(){
     this.strategy.move(this)
+  }
+
+  public draw() {
+    console.log('draw box at ' + this.x + ' ' + this.y);
   }
 }
