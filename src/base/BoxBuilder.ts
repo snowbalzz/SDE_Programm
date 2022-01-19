@@ -1,3 +1,4 @@
+import { StayStrategy } from "../strategy/BoxStrategy";
 import Box, { BoxSetup } from "./Box";
 
 export default class BoxBuilder {
@@ -14,6 +15,7 @@ export default class BoxBuilder {
       y: 0,
       color: 'black',
       speed: 1,
+      strategy: new StayStrategy()
     };
   }
 

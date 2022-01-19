@@ -20,6 +20,7 @@ export default class Game {
     requestAnimationFrame(() => this.loop());
     this.boxes.forEach((box)=>{
       box.info();
+      box.update();
     });
   }
 
