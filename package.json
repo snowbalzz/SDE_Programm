@@ -1,5 +1,5 @@
 {
-  
+  "type": "module",
   "scripts": {
     "start":"parcel index.html"
   },
