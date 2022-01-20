@@ -18,22 +18,17 @@ export default class Game {
 
   private constructor() {
     this.renderer = new CanvasRendererAdapter();
-    this.reset();
-  }
-
-  // Reset the game "scene"
-  private reset() {
     this.boxes = [];
     this.eventManagers = {
       draw: new DrawEventManager,
       update: new UpdateEventManager,
     }
-    this.populate();
   }
 
   // Begin the game
   public start() {
     requestAnimationFrame(() => this.loop()); 
+    this.populate();
   }
 
   // Spawn some boxes (used at game start)
