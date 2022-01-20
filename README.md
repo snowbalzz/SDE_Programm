@@ -48,4 +48,7 @@ When the app was almost done, we pair-programmed some refactoring and cleaning u
 ### Portfolio (README)
 Then we sat making a readme. We started working on it separately, but after few annoying merge conflicts, we decided that one person should type and both should decide what to type.
 
+# Github
+[Link to github](https://github.com/snowbalzz/SDE_Programm)
+
 
