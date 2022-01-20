@@ -16,7 +16,4 @@ Desing patterns that we used in our application
   * Observer: `src/events/*` (event managers), `/src/base/Box.ts` (listeners)
   * Strategy: `src/strategy/BoxStrategy.ts`
 
-
-
-
 # Cooperation

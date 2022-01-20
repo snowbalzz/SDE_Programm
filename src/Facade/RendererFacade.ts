@@ -2,14 +2,15 @@
 
 export default class Renderer {
     private ctx: CanvasRenderingContext2D;
+    private canvas: HTMLCanvasElement;
   
     public constructor() {
-      const canvas = document.createElement('canvas');
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      document.body.appendChild(canvas);
-      canvas.style.backgroundColor = 'gray';
-      this.ctx = canvas.getContext('2d');
+      this.canvas = document.createElement('canvas');
+      this.canvas.width = window.innerWidth;
+      this.canvas.height = window.innerHeight;
+      document.body.appendChild(this.canvas);
+      this.canvas.style.backgroundColor = 'gray';
+      this.ctx = this.canvas.getContext('2d');
     }
   
     public draw(x: number, y: number, size: number, color: string) {
@@ -21,6 +22,6 @@ export default class Renderer {
     }
   
     public clear() {
-      this.ctx.clearRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
+      this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     }
   }
