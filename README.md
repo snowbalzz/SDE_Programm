@@ -5,18 +5,16 @@ The main functionality of the program is to show different boxes, who have diffe
 
 
 # Patterns
-Desing patterns that we used in our application
+Design patterns that we used in our application.
 
-## Patterns used, their rough file locations
-* Creational
-  * Singleton: `src/Game.ts`
-  * Builder: `src/base/BoxBuilder.ts`
-* Structural
-  * Facade: `src/base/CanvasFacade.ts`
-  * Adapter: `src/base/Renderer.ts`
-* Behavioral
-  * Observer: `src/events/*` (event managers), `/src/base/Box.ts` (listeners)
-  * Strategy: `src/strategy/BoxStrategy.ts`
+| Pattern   | File Name                                      | File Location                                                          |
+|-----------|------------------------------------------------|------------------------------------------------------------------------|
+| Singleton | `Game.ts`                                      | ` src/Game.ts `                                                        |
+| Builder   | `BoxBuilder.ts`                                | ` src/base/BoxBuilder.ts `                                             |
+| Facade    | `CanvasFacade.ts`                              | ` src/base/CanvasFacade.ts `                                           |
+| Adapter   | `Renderer.ts`                                  | ` src/base/Renderer.ts `                                               |
+| Observer  | `DrawEventManager.ts`  `UpdateEventManager.ts` | ` src/events/* `  (event managers),  ` /src/base/Box.ts `  (listeners) |
+| Strategy  | `BoxStrategy.ts`                               | ` src/strategy/BoxStrategy.ts `                                        |
 
 ## Brief pattern reasoning
 We use a singleton Game class to controll all the top-level logic and state of the game. It is made sigleton so any object can access its state or methods from anywhere.
