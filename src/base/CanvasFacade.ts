@@ -8,7 +8,7 @@ export default class CanvasFacade {
       this.canvas.width = window.innerWidth;
       this.canvas.height = window.innerHeight;
       document.body.appendChild(this.canvas);
-      this.canvas.style.backgroundColor = 'gray';
+      this.canvas.style.backgroundColor = 'black';
       this.ctx = this.canvas.getContext('2d');
     }
   
