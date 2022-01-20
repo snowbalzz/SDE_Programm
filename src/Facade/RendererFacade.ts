@@ -8,12 +8,16 @@ export default class Renderer {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
       document.body.appendChild(canvas);
-      canvas.style.backgroundColor = 'red';
+      canvas.style.backgroundColor = 'gray';
       this.ctx = canvas.getContext('2d');
     }
   
-    public draw(x: number, y: number) {
-      this.ctx.fillRect(x, y, 50, 50);
+    public draw(x: number, y: number, size: number, color: string) {
+      this.ctx.save();
+      console.log(color);
+      this.ctx.fillStyle = color;
+      this.ctx.fillRect(x, y, size, size);
+      this.ctx.restore();
     }
   
     public clear() {
