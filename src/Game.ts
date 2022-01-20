@@ -4,7 +4,7 @@ import Box from './base/Box'
 import BoxBuilder from './base/BoxBuilder';
 import DrawEventManager from './events/DrawEventManager';
 import UpdateEventManager from './events/UpdateEventManager';
-import RendererFacade from './facade/RendererFacade'
+import RendererFacade from './base/CanvasFacade'
 import { ChaoticStrategy, StayStrategy, StrafeStrategy } from './strategy/BoxStrategy';
 
 export default class Game {

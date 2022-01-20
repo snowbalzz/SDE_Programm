@@ -5,12 +5,14 @@ export default class Renderer {
     private canvas: HTMLCanvasElement;
   
     public constructor() {
+      
       this.canvas = document.createElement('canvas');
       this.canvas.width = window.innerWidth;
       this.canvas.height = window.innerHeight;
       document.body.appendChild(this.canvas);
       this.canvas.style.backgroundColor = 'gray';
       this.ctx = this.canvas.getContext('2d');
+
     }
   
     public draw(x: number, y: number, size: number, color: string) {
