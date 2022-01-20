@@ -33,4 +33,19 @@ Finally, a strategy pattern allows our boxes to get assigned (on creation) with 
 
 # Cooperation
 This application has been created in collaboration between Iosif Z. (@orizzzar) and Daniils A. (@snowbalzz).
+We were working in one room most of the time, which really sped up the proccess.
+
+### Coming up with an idea
+First thing first, we planned how we are going to decide on the project idea: Read to refresh the knowledge of design patterns, come up with program ideas, disscuss them and then do the work.
+Iosif's main idea was a shooter game, and Daniils suggested to create an ATM simulator. With the ATM, it wasn't very clear how exaclty we would put together six design patterns, and the shooter game idea turned out to be too complicated. So after a discussion, we decided to create a simple non-playable game, decided on its structure and did some experiments while pair programming.
+
+### Coding
+Due to our experiments we both had a very good understanding of what we are creating, since we coded in one room, it was very easy to distibute task: "I do this thing, Okay I do that one then". Very often we helped each other when they were stuck or didnt know which of the possible ways something should be done, often rediscussing the idea.
+
+### Finishing Coding
+When the app was almost done, we pair-programmed some refactoring and cleaning up. Tested that it runs after cloning.
+
+### Portfolio (README)
+Then we sat making a readme. We started working on it separately, but after few annoying merge conflicts, we decided that one person should type and both should decide what to type.
+
 
