@@ -10,6 +10,7 @@ const defaultBoxSetup = () => ({
   strategy: new StayStrategy()
 });
 
+// Builder for the Box class
 export default class BoxBuilder {
   private setup: BoxSetup;
 

@@ -11,11 +11,11 @@ export interface BoxSetup {
 }
 
 export default class Box {
-  private size: number;
+  public size: number;
   public x: number;
   public y: number;
   public speed: number;
-  private color: string;
+  public color: string;
   private strategy: Strategy
   private game: Game;
 
@@ -36,6 +36,6 @@ export default class Box {
   }
 
   public draw() {
-    this.game.renderer.draw(this.x, this.y, this.size, this.color);
+    this.game.renderer.draw(this);
   }
 } 

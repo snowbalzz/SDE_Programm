@@ -4,12 +4,12 @@ export interface Strategy {
     move(box:Box) : void;
 }
 
+// Strategy that makes the object stay in one place
 export class StayStrategy implements Strategy {
-    public move() {
-        
-    }
+    public move() { /* do nothing */ }
 };
 
+// Strategy that makes the object move chaotically
 export class ChaoticStrategy implements Strategy {
     public move(box: Box) {
         const direction = Math.random() * Math.PI * 2;
@@ -18,8 +18,8 @@ export class ChaoticStrategy implements Strategy {
     }
 };
 
+// Strategy that makes the object move from side to side in a given direction
 export class StrafeStrategy implements Strategy {
-
     private counter: number;
     private baseDirection: number;
 
